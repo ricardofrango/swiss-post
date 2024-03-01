@@ -54,7 +54,9 @@ import com.ricardo.swisspost.presentation.article_details.model.ArticleDetails
 import com.ricardo.swisspost.presentation.articles_list.model.Article
 import java.util.Date
 
-const val newsListRoute = "newsList"
+private const val newsListRoute = "newsList"
+
+fun buildNewsListRoute() = newsListRoute
 
 fun NavGraphBuilder.articlesListScreen(navigate: (String) -> Unit) = composable(
     route = newsListRoute,

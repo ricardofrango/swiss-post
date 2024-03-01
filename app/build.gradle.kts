@@ -61,6 +61,7 @@ android {
 
 dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation("androidx.biometric:biometric:1.1.0")
     implementation("io.coil-kt:coil-compose:2.6.0")
     implementation("androidx.compose.material:material:1.6.2")
     implementation("com.google.dagger:hilt-android:2.51")
