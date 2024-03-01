@@ -1,14 +1,19 @@
 package com.ricardo.swisspost.repository
 
-import com.ricardo.swisspost.repository.model.NewsResponse
 import javax.inject.Inject
 
 class NewsRepositoryImpl @Inject constructor(
     private val newsApi: NewsApi
 ) : NewsRepository {
-    override suspend fun getNews(query: String?, domains: String?): NewsResponse =
-        newsApi.getNews(
-            query = query,
-            domains = domains
+
+    override suspend fun <NEWS_MAPPER : ArticlesMapper<NEWS_RESULT>, NEWS_RESULT> getHeadlines(
+        mapper: NEWS_MAPPER,
+        country: String,
+    ): NEWS_RESULT =
+        mapper.map(
+            newsApi.getHeadlines(
+                country = country,
+            )
         )
+
 }
