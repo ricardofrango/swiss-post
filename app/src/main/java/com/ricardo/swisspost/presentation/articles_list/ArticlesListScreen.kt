@@ -49,6 +49,8 @@ import androidx.navigation.compose.composable
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.ricardo.swisspost.R
+import com.ricardo.swisspost.presentation.article_details.buildArticleLink
+import com.ricardo.swisspost.presentation.article_details.model.ArticleDetails
 import com.ricardo.swisspost.presentation.articles_list.model.Article
 import java.util.Date
 
@@ -74,7 +76,18 @@ private fun ArticlesListScreen(
     val onRefresh: () -> Unit = { newsListViewModel.refresh() }
     val onRetryClick: () -> Unit = { newsListViewModel.loadNews() }
     val onArticleClick: (Article) -> Unit = {
-        // TODO
+        navigate(
+            buildArticleLink(
+                ArticleDetails(
+                    key = it.key,
+                    title = it.title,
+                    description = it.description,
+                    author = it.author,
+                    date = it.date,
+                    image = it.image,
+                )
+            )
+        )
     }
 
     if (!dataLoaded) {
