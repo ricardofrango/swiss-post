@@ -60,7 +60,11 @@ android {
 
 dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation("io.coil-kt:coil-compose:2.6.0")
+    implementation("androidx.compose.material:material:1.6.2")
     implementation("com.google.dagger:hilt-android:2.51")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    implementation("androidx.navigation:navigation-compose:2.7.7")
     kapt("com.google.dagger:hilt-android-compiler:2.51")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
